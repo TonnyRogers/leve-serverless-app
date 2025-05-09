@@ -5,10 +5,10 @@ service: leve-serverless-app
 
 provider:
   name: aws
-  runtime: nodejs20.x
+  runtime: nodejs18.x
 
 plugins:
-  - serverless-plugin-typescript
+  # - serverless-plugin-typescript
   - serverless-offline
 
 functions:
@@ -17,4 +17,11 @@ functions:
     events:
       - httpApi:
           path: /
+          method: get
+
+  listSchedules:
+    handler: src/handler.listSchedules
+    events:
+      - http:
+          path: schedules
           method: get
