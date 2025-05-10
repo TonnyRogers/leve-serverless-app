@@ -1,4 +1,4 @@
-import { ScheduleProps } from "../../utils/types/schedule";
+import { ScheduleProps } from '../../utils/types/schedule';
 
 class GetSchedulesResponseItem implements ScheduleProps {
   id: number;

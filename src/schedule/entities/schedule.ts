@@ -1,5 +1,9 @@
-import { Entity } from "../../utils/common/entity";
-import { AddAvailableSchedulesCommand, CreateScheduleCommand, ScheduleProps } from "../../utils/types/schedule";
+import { Entity } from '../../utils/common/entity';
+import {
+  AddAvailableSchedulesCommand,
+  CreateScheduleCommand,
+  ScheduleProps,
+} from '../../utils/types/schedule';
 
 export class Schedule extends Entity<ScheduleProps> {
   constructor(props: ScheduleProps) {

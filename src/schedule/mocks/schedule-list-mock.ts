@@ -15,13 +15,13 @@ export const schedulesMock: ScheduleProps[] = [
   {
     id: 2,
     name: 'Dra. Regina Campos',
-    speciality: 'Pediatria',
+    speciality: 'Pediatra',
     available_schedules: [
       '2025-09-25 16:00',
       '2025-09-25 18:00',
       '2025-09-27 12:00',
     ]
-  },
+  }
 ]
 
 export const scheduleListMock = {

@@ -1,8 +1,8 @@
-import "reflect-metadata";
+import 'reflect-metadata';
 
-import { container } from "tsyringe";
-import { SchedulerController } from "../../controller/scheduler-controller";
-import { ScheduleService } from "../../service/schedule-service";
+import { container } from 'tsyringe';
+import { SchedulerController } from '../../controller/scheduler-controller';
+import { ScheduleService } from '../../service/schedule-service';
 
 describe('ScheduleController', () => {
   let scheduleController: SchedulerController;
