@@ -3,6 +3,7 @@ import { GetSchedulesQueryDto } from '../dto/get-schedules-query-dto';
 import { GetSchedulesResponseDto } from '../dto/get-schedules-response-dto';
 import { IScheduleService } from '../interface/schedule-service-interface';
 import { schedulesMock } from '../mocks/schedule-list-mock';
+import { Schedule } from '../entities/schedule';
 
 @injectable()
 export class ScheduleService implements IScheduleService {
@@ -25,7 +26,7 @@ export class ScheduleService implements IScheduleService {
     }
 
     return {
-      medicos: fakeFilter,
+      medicos: fakeFilter.map((item) => new Schedule(item).domainToApi()),
     };
   }
 }

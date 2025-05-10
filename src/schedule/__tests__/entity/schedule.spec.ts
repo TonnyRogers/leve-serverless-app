@@ -12,7 +12,7 @@ describe('ScheduleEntity', () => {
 
     expect(schedule.id).toBe(1);
     expect(schedule.name).toBe('Jose');
-    expect(schedule.speciality).toBe('Pediatria');
+    expect(schedule.speciality).toBe('Pediatra');
     expect(schedule.available_schedules[0]).toBe('2025-09-09 10:00');
   });
 

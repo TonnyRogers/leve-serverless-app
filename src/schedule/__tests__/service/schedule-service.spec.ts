@@ -22,9 +22,9 @@ describe('ScheduleService', () => {
     expect(result.medicos[0]).toMatchObject(
       expect.objectContaining({
         id: expect.any(Number),
-        name: expect.any(String),
-        speciality: expect.any(String),
-        available_schedules: expect.any(Array),
+        nome: expect.any(String),
+        especialidade: expect.any(String),
+        horarios_disponiveis: expect.any(Array),
       }),
     );
   });

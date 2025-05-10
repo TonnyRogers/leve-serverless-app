@@ -1,10 +1,8 @@
-import { ScheduleProps } from '../../utils/types/schedule';
-
-class GetSchedulesResponseItem implements ScheduleProps {
+export class GetSchedulesResponseItem {
   id: number;
-  available_schedules: string[];
-  name: string;
-  speciality: string;
+  horarios_disponiveis: string[];
+  nome: string;
+  especialidade: string;
 }
 
 export class GetSchedulesResponseDto {

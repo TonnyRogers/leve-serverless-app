@@ -4,6 +4,7 @@ import {
   CreateScheduleCommand,
   ScheduleProps,
 } from '../../utils/types/schedule';
+import { GetSchedulesResponseItem } from '../dto/get-schedules-response-dto';
 
 export class Schedule extends Entity<ScheduleProps> {
   constructor(props: ScheduleProps) {
@@ -21,6 +22,15 @@ export class Schedule extends Entity<ScheduleProps> {
 
   addScheduleDates(command: AddAvailableSchedulesCommand): void {
     this.props.available_schedules.push(...command.dates);
+  }
+
+  domainToApi(): GetSchedulesResponseItem {
+    return {
+      id: this.props.id,
+      especialidade: this.props.speciality,
+      nome: this.props.name,
+      horarios_disponiveis: this.props.available_schedules,
+    };
   }
 
   public get id(): number {
