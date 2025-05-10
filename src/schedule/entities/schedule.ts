@@ -24,6 +24,15 @@ export class Schedule extends Entity<ScheduleProps> {
     this.props.available_schedules.push(...command.dates);
   }
 
+  toJson(): ScheduleProps {
+    return {
+      id: this.props.id,
+      name: this.props.name,
+      speciality: this.props.speciality,
+      available_schedules: this.props.available_schedules,
+    };
+  }
+
   domainToApi(): GetSchedulesResponseItem {
     return {
       id: this.props.id,
