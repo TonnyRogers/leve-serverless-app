@@ -2,6 +2,12 @@
   "name": "leve-serverless-app",
   "version": "1.0.0",
   "license": "MIT",
+  "scripts": {
+    "local": "serverless offline",
+    "test": "yarn jest",
+    "test:cov": "jest --coverage",
+    "deploy": "serverless deploy"
+  },
   "devDependencies": {
     "@eslint/js": "^9.26.0",
     "@types/aws-lambda": "^8.10.149",
@@ -28,9 +34,5 @@
     "aws-lambda": "^1.0.7",
     "reflect-metadata": "^0.2.2",
     "tsyringe": "^4.10.0"
-  },
-  "scripts": {
-    "local": "serverless offline",
-    "test": "yarn jest"
   }
 }
