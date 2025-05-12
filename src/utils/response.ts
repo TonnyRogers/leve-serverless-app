@@ -42,7 +42,7 @@ export class LambdaMessage {
   }
 
   static error(messageError: string, status: StatusCode) {
-    const result = new LambdaResponse(messageError, status);
+    const result = new LambdaResponse(messageError, status || 500);
     
     return result.toString();
   }
