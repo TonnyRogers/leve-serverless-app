@@ -1,19 +1,10 @@
-<!--
-title: 'AWS Simple HTTP Endpoint example in NodeJS'
-description: 'This template demonstrates how to make a simple HTTP API with Node.js running on AWS Lambda and API Gateway using the Serverless Framework.'
-layout: Doc
-framework: v4
-platform: AWS
-language: nodeJS
-authorLink: 'https://github.com/serverless'
-authorName: 'Serverless, Inc.'
-authorAvatar: 'https://avatars1.githubusercontent.com/u/13742415?s=200&v=4'
--->
-
 # Leve Serverless Application
 
 O projeto tem como objetivo subir um servidor serverless com funções Lambda
 para expor rotas com um comportamento de GET e POST.
+
+O projeto não usa nenhum framework para iniciar o servidor como NestJs ou Express a ideia
+é mostrar uma implementação vanilla e fazer ao máximo sem o uso de libs externas.
 
 Abaixo você terá instruções de como rodar e outra informações
 
@@ -46,52 +37,69 @@ yarn local
 Após rodar este comando você pode interagir com as rotas através de uma interface de
 teste de API (Postman, Insomnia), no terminal serão exibidas as rotas disponíveis.
 
-### Deployment
+![image](https://github.com/user-attachments/assets/2bf70ef2-e352-4d83-98fd-9c5fb5e1973f)
 
-In order to deploy the example, you need to run the following command:
+#### Rotas: 
+
+**dev/schedulings**
+
+nesta rota você pode passar algumas props no payload e o servidor responderá dinamicamente
+![image](https://github.com/user-attachments/assets/68f3435c-802e-4f17-8f9c-46e7ffbd3cef)
+
+
+**dev/schedules**
+
+nesta rota você pode passar alguns query params e de acordo com ela será feito um filtro dinâmico nos dados mocados
+
+sem parâmetros
+![image](https://github.com/user-attachments/assets/fe4234d2-94be-4545-8829-f7c94e6a0bd6)
+
+com parâmetros
+![image](https://github.com/user-attachments/assets/bf09afe9-28eb-416b-8151-f1419cac5944)
+
+
+### Testes
+
+Este projeto possui testes com Jest para roda-los dê o comando:
+```
+yarn test
+```
+
+a seguinte mensagem aparecerá indicando cada módulo/arquivo:
+![image](https://github.com/user-attachments/assets/34f8a6ab-7896-4221-a139-63a92341e930)
+
+
+Para conferir a cobertura de testes use o comando:
+```
+yarn test:cov
+```
+este comando irá gerar uma pasta **coverage** na raiz, entre em **coverage/lcov-report/src** e dê dois cliques
+no arquivo index.html para ver a cobertura. 
+
+
+### Deploy
+
+Para subir as funções para produção você precisa rodar o comando:
 
 ```
-serverless deploy
+yarn deploy
 ```
+obs: lembrando que sua conta AWS deve estar configurada para que tudo ocorra bem, de
+qualquer forma o terminar irá apontar os erros.
 
-After running deploy, you should see output similar to:
+
+depois de rodar o deploy você deve ver uma mensagem similar a esta:
 
 ```
-Deploying "serverless-http-api" to stage "dev" (us-east-1)
+Deploying "leve-serverless-app" to stage "dev" (us-east-1)
 
-✔ Service deployed to stack serverless-http-api-dev (91s)
+✔ Service deployed to stack leve-serverless-app (91s)
 
 endpoint: GET - https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/
 functions:
-  hello: serverless-http-api-dev-hello (1.6 kB)
+  hello: leve-serverless-app-hello (1.6 kB)
 ```
 
-_Note_: In current form, after deployment, your API is public and can be invoked by anyone. For production deployments, you might want to configure an authorizer. For details on how to do that, refer to [HTTP API (API Gateway V2) event docs](https://www.serverless.com/framework/docs/providers/aws/events/http-api).
+_Nota_: os dados estão mocados e apenas é simulada uma interação
 
-### Invocation
 
-After successful deployment, you can call the created application via HTTP:
-
-```
-curl https://xxxxxxx.execute-api.us-east-1.amazonaws.com/
-```
-
-Which should result in response similar to:
-
-```json
-{ "message": "Go Serverless v4! Your function executed successfully!" }
-```
-
-### Local development
-
-The easiest way to develop and test your function is to use the `dev` command:
-
-```
-serverless dev
-```
-
-This will start a local emulator of AWS Lambda and tunnel your requests to and from AWS Lambda, allowing you to interact with your function as if it were running in the cloud.
-
-Now you can invoke the function as before, but this time the function will be executed locally. Now you can develop your function locally, invoke it, and see the results immediately without having to re-deploy.
-
-When you are done developing, don't forget to run `serverless deploy` to deploy the function to the cloud.
