@@ -25,3 +25,10 @@ functions:
       - http:
           path: schedules
           method: get
+
+  createScheduling:
+    handler: src/handler.createScheduling
+    events:
+      - http:
+          path: schedulings
+          method: post
