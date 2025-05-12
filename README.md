@@ -11,7 +11,9 @@ Abaixo você terá instruções de como rodar e outra informações
 ## Pré requisitos
 
 - NodeJs 18 ou superior
+- package manager YARN
 - Serverless Framework instalado (https://www.serverless.com/)
+- Plugins do VSCode Eslint e Prettier (opcional)
 
 ## Instruções de Uso
 
