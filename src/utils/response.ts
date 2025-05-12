@@ -1,4 +1,3 @@
-
 export enum StatusCode {
   success = 200,
   created = 201,
@@ -13,11 +12,7 @@ class LambdaResponse<RType> {
   private statusCode: number;
   private data?: RType;
 
-  constructor(
-    message: string,
-    statusCode: number,
-    data?: RType,
-  ) {
+  constructor(message: string, statusCode: number, data?: RType) {
     this.message = message;
     this.statusCode = statusCode;
     this.data = data;
@@ -29,13 +24,13 @@ class LambdaResponse<RType> {
       body: JSON.stringify({
         message: this.message,
         data: this.data,
-      })
-    }
+      }),
+    };
   }
 }
 
 export class LambdaMessage {
-  static resolve(data: Object, status: StatusCode) {    
+  static resolve(data: object, status: StatusCode) {
     const result = new LambdaResponse('success', status, data);
 
     return result.toString();
@@ -43,7 +38,7 @@ export class LambdaMessage {
 
   static error(messageError: string, status: StatusCode) {
     const result = new LambdaResponse(messageError, status || 500);
-    
+
     return result.toString();
   }
 }
