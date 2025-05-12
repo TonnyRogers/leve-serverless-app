@@ -55,12 +55,14 @@ describe('ScheduleEntity', () => {
 
     const jsonResult = schedule.toJson();
 
-    expect(jsonResult).toMatchObject(expect.objectContaining({
-      id: expect.any(Number),
-      name: expect.any(String),
-      speciality: expect.any(String),
-      available_schedules: expect.any(Array),
-    }))
+    expect(jsonResult).toMatchObject(
+      expect.objectContaining({
+        id: expect.any(Number),
+        name: expect.any(String),
+        speciality: expect.any(String),
+        available_schedules: expect.any(Array),
+      }),
+    );
   });
 
   it('should get schedule domain data to api response', () => {
@@ -74,11 +76,13 @@ describe('ScheduleEntity', () => {
 
     const apiResult = schedule.domainToApi();
 
-    expect(apiResult).toMatchObject(expect.objectContaining({
-      id: expect.any(Number),
-      nome: expect.any(String),
-      especialidade: expect.any(String),
-      horarios_disponiveis: expect.any(Array),
-    }))
+    expect(apiResult).toMatchObject(
+      expect.objectContaining({
+        id: expect.any(Number),
+        nome: expect.any(String),
+        especialidade: expect.any(String),
+        horarios_disponiveis: expect.any(Array),
+      }),
+    );
   });
 });

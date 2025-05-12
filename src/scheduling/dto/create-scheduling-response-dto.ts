@@ -4,5 +4,5 @@ export class CreateSchedulingResponseDto {
     medico: string;
     paciente: string;
     data_horario: string;
-  }
+  };
 }

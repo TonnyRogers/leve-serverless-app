@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import 'reflect-metadata';
 
-const BODY_METADATA_KEY = Symbol('body-param');
+const QUERY_METADATA_KEY = Symbol('query-param');
 
-export function Body(): ParameterDecorator {
+export function Query(): ParameterDecorator {
   return (target: object, propertyKey: string, parameterIndex: number) => {
     Reflect.defineMetadata(
-      BODY_METADATA_KEY,
+      QUERY_METADATA_KEY,
       parameterIndex,
       target,
       propertyKey,
@@ -14,9 +14,9 @@ export function Body(): ParameterDecorator {
   };
 }
 
-export function getBodyParamIndex(
+export function getQueryParamIndex(
   target: any,
   methodName: string,
 ): number | undefined {
-  return Reflect.getMetadata(BODY_METADATA_KEY, target, methodName);
+  return Reflect.getMetadata(QUERY_METADATA_KEY, target, methodName);
 }

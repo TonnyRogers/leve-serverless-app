@@ -17,7 +17,11 @@ describe('ScheduleController', () => {
   });
 
   it('should list schedules', async () => {
-    const response = await scheduleController.schedules({});
+    const response = await scheduleController.schedules({
+      queryStringParameters: {
+        name: 'Dr. Marcos Alves',
+      },
+    });
 
     expect(response.statusCode).toBe(200);
     expect(response.body).toBeTruthy();

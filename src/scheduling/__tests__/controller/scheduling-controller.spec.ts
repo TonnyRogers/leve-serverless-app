@@ -23,7 +23,7 @@ describe('SchedulingController', () => {
         patient: 'Abreu Silva',
         scheduledTime: '2025-05-31 12:00',
       },
-    } as any);
+    });
 
     expect(response.statusCode).toBe(201);
     expect(response.body).toBeTruthy();

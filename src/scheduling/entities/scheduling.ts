@@ -1,5 +1,8 @@
 import { Entity } from '../../utils/common/entity';
-import { CreateSchedulingCommand, SchedulingProps } from '../../utils/types/scheduling';
+import {
+  CreateSchedulingCommand,
+  SchedulingProps,
+} from '../../utils/types/scheduling';
 import { CreateSchedulingResponseDto } from '../dto/create-scheduling-response-dto';
 
 export class Scheduling extends Entity<SchedulingProps> {
@@ -29,7 +32,7 @@ export class Scheduling extends Entity<SchedulingProps> {
     };
   }
 
-  domainToApi(): CreateSchedulingResponseDto {    
+  domainToApi(): CreateSchedulingResponseDto {
     return {
       agendamento: {
         medico: this.props.scheduling.doctor,
