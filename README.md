@@ -10,13 +10,41 @@ authorName: 'Serverless, Inc.'
 authorAvatar: 'https://avatars1.githubusercontent.com/u/13742415?s=200&v=4'
 -->
 
-# Serverless Framework Node HTTP API on AWS
+# Leve Serverless Application
 
-This template demonstrates how to make a simple HTTP API with Node.js running on AWS Lambda and API Gateway using the Serverless Framework.
+O projeto tem como objetivo subir um servidor serverless com funções Lambda
+para expor rotas com um comportamento de GET e POST.
 
-This template does not include any kind of persistence (database). For more advanced examples, check out the [serverless/examples repository](https://github.com/serverless/examples/) which includes Typescript, Mongo, DynamoDB and other examples.
+Abaixo você terá instruções de como rodar e outra informações
 
-## Usage
+## Pré requisitos
+
+- NodeJs 18 ou superior
+- Serverless Framework instalado (https://www.serverless.com/)
+
+## Instruções de Uso
+
+### Local
+
+Para rodar este projeto local você deve seguir os seguintes comandos:
+
+Instalar as dependências
+
+```
+yarn install --frozen-lockfile
+```
+
+Rodar as funções lambda localmente
+obs: para este teste você terá de configurar o **serverless** em sua máquina,
+ao rodar o comando ele pedirá para que você logue com uma conta ou crie, é só seguir
+as intruções no terminal ou consultar a documentação no site do [framework](https://www.serverless.com/)
+
+```
+yarn local
+```
+
+Após rodar este comando você pode interagir com as rotas através de uma interface de
+teste de API (Postman, Insomnia), no terminal serão exibidas as rotas disponíveis.
 
 ### Deployment
 
