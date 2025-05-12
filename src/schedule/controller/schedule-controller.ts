@@ -4,7 +4,7 @@ import { ScheduleService } from '../service/schedule-service';
 import { LambdaMessage, StatusCode } from '../../utils/response';
 
 @injectable()
-export class SchedulerController {
+export class ScheduleController {
   constructor(
     @inject(ScheduleService.name)
     private readonly scheduleService: IScheduleService,

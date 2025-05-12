@@ -72,9 +72,9 @@ describe('ScheduleEntity', () => {
 
     schedule.addScheduleDates({ dates: ['2025-06-06', '2025-06-08'] });
 
-    const jsonResult = schedule.domainToApi();
+    const apiResult = schedule.domainToApi();
 
-    expect(jsonResult).toMatchObject(expect.objectContaining({
+    expect(apiResult).toMatchObject(expect.objectContaining({
       id: expect.any(Number),
       nome: expect.any(String),
       especialidade: expect.any(String),

@@ -1,15 +1,15 @@
 import 'reflect-metadata';
 
 import { container } from 'tsyringe';
-import { SchedulerController } from '../../controller/scheduler-controller';
+import { ScheduleController } from '../../controller/schedule-controller';
 import { ScheduleService } from '../../service/schedule-service';
 
 describe('ScheduleController', () => {
-  let scheduleController: SchedulerController;
+  let scheduleController: ScheduleController;
 
   beforeAll(() => {
     container.register(ScheduleService.name, { useClass: ScheduleService });
-    scheduleController = container.resolve(SchedulerController);
+    scheduleController = container.resolve(ScheduleController);
   });
 
   it('should be defined', async () => {
